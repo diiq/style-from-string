@@ -23,11 +23,13 @@ function loadStyles(css, id, doc) {
 
   // Really need to use a parser for this, but here's an MVP. Will fail if rules contain "}" (for, like, content or urls I guess?)
   const re = /[^{}]+{(([^{}]+)|((([^{}]+){([^{}]*)})+[^{}]*))}/g;
+  accum = [];
   do {
     var r = re.exec(css);
     if (!r || !r[0].trim()) continue;
-    sheet.sheet.insertRule(r[0])
+    accum.push(r[0])
   } while(r);
+  accum.reverse().forEach(r => sheet.sheet.insertRule(r));
 
   return sheet;
 }
