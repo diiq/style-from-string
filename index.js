@@ -18,7 +18,6 @@ function loadStyles(css, id, doc) {
     sheet = createSheet(id, doc);
   } else {
     clearRules(sheet.sheet);
-    console.log("Cleared", sheet, sheet.sheet.cssRules)
   }
 
   // Really need to use a parser for this, but here's an MVP. Will fail if rules contain "}" (for, like, content or urls I guess?)
@@ -51,7 +50,6 @@ function createSheet(id, doc) {
   var style = doc.createElement('style');
   head.appendChild(style);
   style.type = 'text/css';
-  console.log("creating new sheet");
   style.setAttribute("id", id);
   return style
 }
