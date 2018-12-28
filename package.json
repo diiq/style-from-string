@@ -1,6 +1,6 @@
 {
   "name": "style-from-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uses insertRule to add CSS style rules to a page. ",
   "main": "index.js",
   "scripts": {

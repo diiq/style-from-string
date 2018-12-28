@@ -48,9 +48,9 @@ function createSheet(id, doc) {
   }
 
   var style = doc.createElement('style');
-  head.appendChild(style);
   style.type = 'text/css';
   style.setAttribute("id", id);
+  head.prepend(style);
   return style
 }
 
